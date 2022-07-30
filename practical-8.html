@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation bar with dropdown menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />"
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image:url('./images/back2.webp');
+            background-repeat: no-repeat;/*image will not be repeated*/
+           background-position: center;
+            background-size: cover;/*it occupy the complete page*/
+            height:100vh;/*it covers the complete page*/
+        }
+        .menu{
+            background-color: gray;
+            margin-top: 0px;
+            height:60px;
+            width:100%;
+            text-align: center;
+        }
+        .menu ul{
+            list-style: none;/*means bullet sign will disappear*/
+            display: inline-flex;/*it means inline-element become flexible and arrange horizontally*/
+        }
+        .menu ul li{
+            width:150px;
+            margin:15px;/*used for making the distance between the more li tags*/
+            padding:7px;/*used for hover effect*/
+        }
+        .menu ul li a{
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-family:arial;
+        }
+        .fa{
+           /* margin-right: 10px;*/
+        }
+        .menu ul li:hover{
+            background-color: goldenrod;/*the size of width and height is decided padding*/
+        }
+        .menu ul li:hover, .active{
+            background-color: goldenrod;/*if we are spfyg the class of the l1 then we can permt apply hover*/
+        }
+/*if you want to create the drop down inside any li then create the div tag before closing of that li*/
+       .dropdown1{
+        display:none;/*all the elements will disapper inside this class*/
+        /*Now I want that the elements inside the dropdown will appear only when we move over that li*/
+        }
+        .menu ul li:hover .dropdown1{
+            display: block;
+            position: absolute;/*due to this you can adjust according to your choice*/
+            background-color: gray;
+            color: white;
+            margin-top: 15px;
+            margin-left: -30px;
+        }
+        .menu ul li:hover .dropdown1 ul li{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul><li class="active"><a href="#"><i class="fa-solid fa-house"></i>Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-user"></i>About</a></li>
+        <li><a href="#"><i class="fa-solid fa-server"></i>Services</a>
+        <div class="dropdown1">
+        <ul>
+        <l1><a href="#"></a>Recruitment</l1>
+        <l1><a href="#"></a>Development</l1>
+        <l1><a href="#"></a>Training</l1>
+        </ul>
+        </div>
+    </li>
+        <li><a href="#"><i class="fa-solid fa-pen-to-square"></i>Training</a></li>
+        <li><a href="#"><i class="fa-solid fa-user"></i>Blog</a></li>
+        <li><a href="#"><i class="fa-solid fa-phone"></i>Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>
